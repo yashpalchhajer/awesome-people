@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.24 on 2018-06-12 11:37:09.
+ * Generated for Laravel 5.6.24 on 2018-06-12 11:45:03.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12464,6 +12464,133 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Hyn\Tenancy\Facades { 
+
+    class TenancyFacade {
+        
+        /**
+         * 
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function installed()
+        {
+            return \Hyn\Tenancy\Environment::installed();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function identifyHostname()
+        {
+            return \Hyn\Tenancy\Environment::identifyHostname();
+        }
+        
+        /**
+         * 
+         *
+         * @return \Hyn\Tenancy\Customer|null 
+         * @static 
+         */ 
+        public static function customer()
+        {
+            return \Hyn\Tenancy\Environment::customer();
+        }
+        
+        /**
+         * Get or set the current hostname.
+         *
+         * @param \Hyn\Tenancy\Hostname|null $hostname
+         * @return \Hyn\Tenancy\Hostname|null 
+         * @static 
+         */ 
+        public static function hostname($hostname = null)
+        {
+            return \Hyn\Tenancy\Environment::hostname($hostname);
+        }
+        
+        /**
+         * 
+         *
+         * @return \Hyn\Tenancy\Website|bool 
+         * @static 
+         */ 
+        public static function website()
+        {
+            return \Hyn\Tenancy\Environment::website();
+        }
+        
+        /**
+         * 
+         *
+         * @param $command
+         * @param null $handler
+         * @return mixed 
+         * @static 
+         */ 
+        public static function dispatch($command, $handler = null)
+        {
+            return \Hyn\Tenancy\Environment::dispatch($command, $handler);
+        }
+        
+        /**
+         * 
+         *
+         * @param \Hyn\Tenancy\AbstractEvent $event
+         * @param array $payload
+         * @return array|null 
+         * @static 
+         */ 
+        public static function emitEvent($event, $payload = array())
+        {
+            return \Hyn\Tenancy\Environment::emitEvent($event, $payload);
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+            \Hyn\Tenancy\Environment::macro($name, $macro);
+        }
+        
+        /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin)
+        {
+            \Hyn\Tenancy\Environment::mixin($mixin);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+            return \Hyn\Tenancy\Environment::hasMacro($name);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14807,6 +14934,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Tenancy extends \Hyn\Tenancy\Facades\TenancyFacade {}
  
 }
 
