@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/tenant/create', 'HomeDomain\TenantController@create')->name('tenant.create');
+Route::post('/tenant/delete', 'HomeDomain\TenantController@delete')->name('tenant.delete');

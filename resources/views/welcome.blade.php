@@ -4,12 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Awesome People</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
         <!-- Styles -->
         <style>
             html, body {
@@ -353,7 +350,8 @@
                                 </div>
                                 <div class="formOther"><a class="forgotBtn" href="#">FORGOT PASSWORD?</a><a class="needAccount" href="#">NEED AN ACCOUNT?</a></div>
                             </form>
-                            <form id="register">
+                            <form id="register" method="post" action="{{ route('tenant.create') }}">
+                                {{ csrf_field() }}
                                 <div class="formHead">
                                     <h1>BECOME A BRO</h1>
                                     <p>Register to gain full access</p>

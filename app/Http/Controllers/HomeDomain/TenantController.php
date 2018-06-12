@@ -9,11 +9,14 @@
 namespace App\Http\Controllers\HomeDomain;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class TenantController extends Controller
 {
-    public function create()
-    {}
+    public function create(Request $request)
+    {
+        dd($request);
+    }
 
     public function delete()
     {}
